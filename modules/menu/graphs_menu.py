@@ -18,7 +18,7 @@ def graphs_menu():
         print("----- Snap Data Graphs Menu -----")
         print('1. Create Total vs Collected Cards Pie Chart')
         print('2. Create Uncollected Cards by Series Pie Charts')
-        print('3. Create Card-Location Compatibility Heatmap')
+        print('3. Create Card-Location Compatibility Wavemap')
         print("4. Back")
         choice = input("Enter your choice: ")
 

@@ -12,7 +12,6 @@ Snap Calculator is a comprehensive tool designed to manage, analyze, and visuali
 Whether you're a casual collector or a seasoned aficionado, Snap Calculator aims to simplify and enhance your card collecting journey.
 
 ## Features
-## Features
 
 Snap Calculator offers a variety of features to manage and analyze your card collection:
 
@@ -29,12 +28,13 @@ Snap Calculator offers a variety of features to manage and analyze your card col
 
 #### Create Data Graphs
 - **Create Total vs Collected Cards Pie Chart:** Generate a pie chart showing the total vs collected cards.
-- **Create Uncollected Cards by Series Pie Charts:** Generate pie charts depicting uncollected cards by series.
-- **Create Card-Location Compatibility Heatmap:** Generate a heatmap showing the compatibility between cards and locations.
 ![Collected Pie Chart](assets/images/collected_pie.png)
+- **Create Uncollected Cards by Series Pie Charts:** Generate pie charts depicting uncollected cards by series.
 ![Uncollected by Series Example](assets/images/uncollected_series_pie.png)
+- **Create Card-Location Compatibility Wavemap:** Generate a heatmap showing the compatibility between cards and locations.
 ![Card score by Location for Collection Example](assets/images/collection_example.png)
 ![Card score by Location for Deck Example](assets/images/deck_example.png)
+
 
 #### Player Details Setup
 - **Player List:** Manage and navigate through a list of players.
