@@ -1,7 +1,15 @@
 # Snap Calculator
 
-## Project Title and Introduction
-- Brief description of what the project does.
+## Introduction
+
+Snap Calculator is a comprehensive tool designed to manage, analyze, and visualize card collections. Serving as a central hub, it integrates various functionalities such as:
+
+- **Graphical Analysis:** Generate pie charts and graphs to visualize your collection.
+- **Scoring System:** Evaluate the value and rarity of cards in your collection.
+- **Top Cards Management:** Easily identify and manage the top cards in your collection.
+- **Player Menu:** Personalize settings and preferences for an individualized experience.
+
+Whether you're a casual collector or a seasoned aficionado, Snap Calculator aims to simplify and enhance your card collecting journey.
 
 ## Features
 - List of main functionalities.
