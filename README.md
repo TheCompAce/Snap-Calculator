@@ -47,6 +47,25 @@ Snap Calculator offers a variety of features to manage and analyze your card col
 - **Delete Decks:** Remove decks from the player's collection.
 
 
+## Matrix Setup
+
+### Overview
+The scoring system in Snap Calculator relies on a series of matrices and computation logic to evaluate the compatibility and effects between cards and locations. Each matrix file under `modules/matrix` contains predefined rules or score values for different gameplay mechanics. These matrices are then utilized in the `snap_base.py` file, where the actual computation takes place, to generate scores for different card and location combinations.
+
+### How to Edit Matrix Files
+
+#### card_matrix.py
+- This file defines the effects and patterns for gameplay mechanics related to cards. 
+- To update or add a new rule, add a dictionary entry specifying the `Effect`, `Pattern`, and `Score`.
+
+#### link_matrix.py
+- This file defines the linking rules between location and card contexts.
+- To modify the linking rules, update the dictionary entries for `LocationContextID` and `CardContextID`.
+
+#### location_matrix.py
+- This file defines the effects and patterns for gameplay mechanics related to locations.
+- Similar to `card_matrix.py`, you can add or modify dictionary entries for `Effect`, `Pattern`, and `Score`.
+
 
 
 
