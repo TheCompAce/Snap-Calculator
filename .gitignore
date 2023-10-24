@@ -1,5 +1,6 @@
 __pycache__
-Images
+Raw
+Images/*.png
 player
 results
 Tools
