@@ -5,6 +5,11 @@
 
 ## Features
 - List of main functionalities.
+![Collected Pie Chart](assets/images/collected_pie.png)
+![Uncollected by Series Example](assets/images/uncollected_series_pie.png)
+![Card score by Location for Collection Example](assets/images/collection_example.png)
+![Card score by Location for Deck Example](assets/images/deck_example.png)
+
 
 ## Installation
 - Install the dependencies by running `pip install -r requirements.txt`.
