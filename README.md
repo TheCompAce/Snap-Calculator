@@ -34,7 +34,7 @@ Snap Calculator offers a variety of features to manage and analyze your card col
 - **Create Card-Location Compatibility Wavemap:** Generate a heatmap showing the compatibility between cards and locations.
 ![Card score by Location for Collection Example](assets/images/collection_example.png)
 ![Card score by Location for Deck Example](assets/images/deck_example.png)
-
+- **Create Decks from you Collection:** Generate a deck for certain locations, or all locations, using you Collected cards.
 
 #### Player Details Setup
 - **Player List:** Manage and navigate through a list of players.
@@ -88,7 +88,7 @@ The scoring system in Snap Calculator relies on a series of matrices and computa
 - **missing.txt**: This is a text file that may contain important notes or configuration details.
 
 ## Contributing
-- You can contribute by joing our developers for this porject.
+- You can contribute by joining our developers for this porject.
 - You can also Venmo me donations to @BradfordBrooks79
 
 ## License
