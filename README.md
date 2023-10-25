@@ -16,6 +16,8 @@ Whether you're a casual collector or a seasoned aficionado, Snap Calculator aims
 Snap Calculator offers a variety of features to manage and analyze your card collection:
 
 ### Core Functionalities
+#### Create Decks Automatically
+- **Create Decks from you Collection:** Generate a deck for certain locations, or all locations, using you Collected cards.
 
 #### Get Scoring Values
 - **Get Location-Card Overall Score:** Calculate an overall compatibility score between a given location and card.
@@ -34,7 +36,7 @@ Snap Calculator offers a variety of features to manage and analyze your card col
 - **Create Card-Location Compatibility Wavemap:** Generate a heatmap showing the compatibility between cards and locations.
 ![Card score by Location for Collection Example](assets/images/collection_example.png)
 ![Card score by Location for Deck Example](assets/images/deck_example.png)
-- **Create Decks from you Collection:** Generate a deck for certain locations, or all locations, using you Collected cards.
+
 
 #### Player Details Setup
 - **Player List:** Manage and navigate through a list of players.
