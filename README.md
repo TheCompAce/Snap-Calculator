@@ -16,6 +16,7 @@ Whether you're a casual collector or a seasoned aficionado, Snap Calculator aims
 Snap Calculator offers a variety of features to manage and analyze your card collection:
 
 ## Core Functionalities
+
 #### Create Decks Automatically
 - **Create Decks from you Collection:** Generate a deck for certain locations, or all locations, using you Collected cards.
 
