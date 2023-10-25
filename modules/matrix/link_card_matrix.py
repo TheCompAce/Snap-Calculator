@@ -44,6 +44,15 @@ def get_link_card_matrix():
         {'BaseContextID': 'yours', 'CheckContextID': 'opponent', 'Score': -35},
         {'BaseContextID': 'opponent', 'CheckContextID': 'yours', 'Score': -35},
         
+        # Moving
+        {'BaseContextID': 'move', 'CheckContextID': 'this_moves', 'Score': 30},
+        {'BaseContextID': 'this_moves', 'CheckContextID': 'move', 'Score': 30},
+        {'BaseContextID': 'this_card_moves', 'CheckContextID': 'move', 'Score': 30},
+        {'BaseContextID': 'move', 'CheckContextID': 'this_card_moves', 'Score': 30},
+
+        # Pull
+        {'BaseContextID': 'pull', 'CheckContextID': 'this_moves', 'Score': 0},
+
         # No ability
         {'BaseContextID': 'no_ability', 'CheckContextID': 'no_ability', 'Score': 0}
     ]

@@ -42,9 +42,16 @@ def get_card_matrix():
         {'Effect': 'power', 'Pattern': r'power', 'Score': 1},
         {'Effect': 'p_power', 'Pattern': r'Power', 'Score': 1},
         {'Effect': 'no_ability', 'Pattern': 'No ability', 'Score': 0},
+        {'Effect': 'move', 'Pattern': r'move', 'Score': 1},
+        {'Effect': 'pull', 'Pattern': r'pull', 'Score': 1},
         {'Effect': 'moves', 'Pattern': r'moves', 'Score': 1},
         {'Effect': 'yours', 'Pattern': r'yours', 'Score': 1},
-        {'Effect': 'opponent', 'Pattern': r'opponent', 'Score': 1}
+        {'Effect': 'opponent', 'Pattern': r'opponent', 'Score': 1},
+        {'Effect': 'a_card_moves', 'Pattern': r'a card moves', 'Score': 1},
+        {'Effect': 'this_moves', 'Pattern': r'this moves', 'Score': 1},
+        {'Effect': 'this_card_moves', 'Pattern': r'this card moves', 'Score': 1},        
+        {'Effect': 'add_a_copy', 'Pattern': r'add a copy', 'Score': 1},
+        
     ]
 
     return effects_and_patterns

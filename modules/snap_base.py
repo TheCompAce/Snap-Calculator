@@ -8,6 +8,7 @@ from modules.matrix.card_matrix import get_card_matrix
 from modules.matrix.link_matrix import get_link_matrix
 from modules.matrix.link_card_matrix import get_link_card_matrix
 from modules.utils import read_json, get_cards_from_base
+from modules.utils import read_json, get_cards_from_names
 
 ERR_NO_LOCATION = -10000
 ERR_NO_CARD = -20000
@@ -117,16 +118,28 @@ def calculate_cards_compatibility_score(base_name, check_name):
     check_effect_text = check_match.get('Card Ability', '').lower()
 
     # Identify effects and their scores for base_name and check_name
-    base_effects_with_scores = [(item['Effect'], item['Score']) for item in card_matrix if re.search(item['Pattern'], base_effect_text, re.IGNORECASE)]
-    check_effects_with_scores = [(item['Effect'], item['Score']) for item in card_matrix if re.search(item['Pattern'], check_effect_text, re.IGNORECASE)]
+    base_effects_with_scores = [(item['Effect'], item['Pattern'], item['Score']) for item in card_matrix if re.search(item['Pattern'], base_effect_text, re.IGNORECASE)]
+    check_effects_with_scores = [(item['Effect'], item['Pattern'], item['Score']) for item in card_matrix if re.search(item['Pattern'], check_effect_text, re.IGNORECASE)]
 
     # Calculate compatibility score
-    for base_effect, base_score in base_effects_with_scores:
-        for check_effect, check_score in check_effects_with_scores:
+    for base_effect, base_pattern, base_score in base_effects_with_scores:
+        for check_effect, check_pattern, check_score in check_effects_with_scores:
             for link in link_card_matrix:
                 
                 if link['BaseContextID'] == base_effect and link['CheckContextID'] == check_effect:
-                    compatibility_score += (link['Score']) # * base_score * check_score)
+                    base_card = get_cards_from_names([base_name], base_file)[0]
+                    check_card = get_cards_from_names([check_name], base_file)[0]
+                    base_pattren_score = 0
+                    check_pattren_score = 0
+                    match = re.search(base_pattern, base_card["Card Ability"], re.IGNORECASE)
+                    if match and match.groups():
+                        base_pattren_score = (int(match.group(1)) / 100)
+
+                    match = re.search(check_pattern, check_card["Card Ability"], re.IGNORECASE)
+                    if match and match.groups():
+                        check_pattren_score = (int(match.group(1)) / 100)
+
+                    compatibility_score += link['Score'] + (base_pattren_score - check_pattren_score) + (base_score - check_score)
 
     return compatibility_score
 
@@ -180,9 +193,9 @@ def calculate_compatibility_score(location_name, card_name):
                 power = card_match.get('Power', 0)
                 
                 # Considering the energy cost and power in the compatibility score
-                compatibility_score += ((10 - energy_cost) / 100)  # Lower energy cost increases score
-                compatibility_score += (power / 100)  # Higher power increases score
-                compatibility_score += calculate_link_score(location_name, card_name)
+                # compatibility_score += ((10 - energy_cost) / 100)  # Lower energy cost increases score
+                # compatibility_score += (power / 100)  # Higher power increases score
+                compatibility_score += calculate_link_score(location_name, card_name) * energy_cost * energy_cost
 
                 for term_data in card_matrix:
                     pattern = term_data['Pattern']
