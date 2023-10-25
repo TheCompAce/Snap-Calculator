@@ -6,6 +6,7 @@ from collections import Counter
 from modules.matrix.location_matrix import get_location_matrix
 from modules.matrix.card_matrix import get_card_matrix
 from modules.matrix.link_matrix import get_link_matrix
+from modules.matrix.link_card_matrix import get_link_card_matrix
 from modules.utils import read_json
 
 ERR_NO_LOCATION = -10000
