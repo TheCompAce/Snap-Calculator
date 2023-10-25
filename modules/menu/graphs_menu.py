@@ -106,7 +106,6 @@ def create_card_location_wave_map(player_data, location_name, card_names, allow_
     title = ax.set_title(f"{player_data['Name']} Card Map at {location_name}")
     title.set_path_effects(path_effects_shadow(3, 1, 'white'))  # Using the custom path effect
 
-
     ax.set_xlabel('Energy', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
     ax.set_zlabel('Score', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
     ax.set_ylabel('Power', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
