@@ -95,7 +95,17 @@ def autocomplete_generic(list_data, partial_name, no_check=False):
             for i, loc in enumerate(list_data):
                 print(f'{i + 1}. {loc}')
             selection = int(input('Enter your choice: ')) - 1
-            return list_data[selection]
+
+            if selection.isdigit():
+                return list_data[selection]
+            else:
+                if selection == "":
+                    print("Nothing selected using {partial_name}")
+                    return partial_name
+                else:
+                    print("Using {selection} instead of {partial_name}")
+                    return partial_name
+                
         else:
             return partial_name
     elif list_data:
