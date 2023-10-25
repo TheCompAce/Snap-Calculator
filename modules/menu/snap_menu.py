@@ -1,6 +1,7 @@
 import json
 from modules import snap_base
 from modules.menu.graphs_menu import graphs_menu
+from modules.menu.make_deck_menu import deck_menu
 from modules.menu.score_menu import score_menu
 from modules.menu.top_cards_menu import top_cards_menu
 from modules.utils import check_and_create_folder, autocomplete_location_name, autocomplete_card_name, read_json
@@ -19,7 +20,8 @@ def main_menu():
         print("3. Create Data Graphs")
         print("4. Create Analysis Files Menu") 
         print("5. Player Detials Setup")
-        print("6. Exit")
+        print("6. Build Decks")
+        print("7. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -33,6 +35,8 @@ def main_menu():
         elif choice == '5':
             player_menu.player_setup_menu()
         elif choice == '6':
+            deck_menu()
+        elif choice == '7':
             print("Exiting the program.")
             break
 

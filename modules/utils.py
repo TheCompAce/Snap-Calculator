@@ -32,6 +32,15 @@ def read_json(file_path):
     except Exception as e:
         return {"error": str(e)}
     
+def write_json(data, file_path):
+    try:
+        with open(file_path, 'w') as f:
+            json.dump(data, f, indent=4)
+        return {"status": "success"}
+    except Exception as e:
+        return {"error": str(e)}
+
+    
 def autocomplete_player_name(player_file, partial_name):
     matching_players = []
     players_base = read_player_json(player_file)
@@ -51,14 +60,24 @@ def autocomplete_card_name(base_file, partial_name):
             
     return autocomplete_generic(matching_cards, partial_name)
 
-def autocomplete_location_name(base_file, partial_name):
+def autocomplete_location_name(base_file, partial_name, no_check=False):
     matching_locations = []
     base_data = read_json(base_file)
     location_data = base_data.get('Locations', [])
     
     matching_locations = [loc['Location'] for loc in location_data if loc['Location'].lower().startswith(partial_name.lower())]
 
-    return autocomplete_generic(matching_locations, partial_name)
+    return autocomplete_generic(matching_locations, partial_name, no_check)
+
+def check_if_valid_location(base_file, location_name):
+    base_data = read_json(base_file)
+    location_data = base_data.get('Locations', [])
+
+    for location in location_data:
+        if location["Location"] == location_name:
+            return True
+
+    return False
 
 def autocomplete_deck_name(decks, partial_name):
     matching_decks = []
@@ -69,13 +88,16 @@ def autocomplete_deck_name(decks, partial_name):
     return autocomplete_generic(matching_decks, partial_name)
 
 
-def autocomplete_generic(list_data, partial_name):
+def autocomplete_generic(list_data, partial_name, no_check=False):
     if len(list_data) > 1:
-        print('Multiple matches found. Please select one:')
-        for i, loc in enumerate(list_data):
-            print(f'{i + 1}. {loc}')
-        selection = int(input('Enter your choice: ')) - 1
-        return list_data[selection]
+        if not no_check:
+            print('Multiple matches found. Please select one:')
+            for i, loc in enumerate(list_data):
+                print(f'{i + 1}. {loc}')
+            selection = int(input('Enter your choice: ')) - 1
+            return list_data[selection]
+        else:
+            return partial_name
     elif list_data:
         return list_data[0]
     else:
