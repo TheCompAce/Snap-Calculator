@@ -17,19 +17,19 @@ Snap Calculator offers a variety of features to manage and analyze your card col
 
 ## Core Functionalities
 
-#### Create Decks Automatically
+### Create Decks Automatically
 - **Create Decks from you Collection:** Generate a deck for certain locations, or all locations, using you Collected cards.
 
-#### Get Scoring Values
+### Get Scoring Values
 - **Get Location-Card Overall Score:** Calculate an overall compatibility score between a given location and card.
 - **Get Location-Card Linking Score:** Compute a score based on how well a card and location are linked.
 
-#### Create Analysis Files
+### Create Analysis Files
 - **Analyze Location Patterns:** Perform analysis on location patterns and save the results.
 - **Analyze Cards Patterns:** Analyze card patterns and save the results.
 - **Analyze Location-Card Links:** Analyze the links between locations and cards.
 
-#### Create Data Graphs
+### Create Data Graphs
 - **Create Total vs Collected Cards Pie Chart:** Generate a pie chart showing the total vs collected cards.
 ![Collected Pie Chart](assets/images/collected_pie.png)
 - **Create Uncollected Cards by Series Pie Charts:** Generate pie charts depicting uncollected cards by series.
@@ -39,7 +39,7 @@ Snap Calculator offers a variety of features to manage and analyze your card col
 ![Card score by Location for Deck Example](assets/images/deck_example.png)
 
 
-#### Player Details Setup
+### Player Details Setup
 - **Player List:** Manage and navigate through a list of players.
 - **Add New Player:** Add new players to the list.
 - **Delete Player:** Remove players from the list.
