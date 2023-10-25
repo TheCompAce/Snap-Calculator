@@ -139,7 +139,7 @@ def calculate_cards_compatibility_score(base_name, check_name):
                     if match and match.groups():
                         check_pattren_score = (int(match.group(1)) / 100)
 
-                    compatibility_score += link['Score'] + (base_pattren_score - check_pattren_score) + (base_score - check_score)
+                    compatibility_score += link['Score'] + ((base_pattren_score - check_pattren_score) + (base_score - check_score))
 
     return compatibility_score
 

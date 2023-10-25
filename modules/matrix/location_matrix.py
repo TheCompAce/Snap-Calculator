@@ -38,6 +38,7 @@ def get_location_matrix():
         {'Effect': 'disable_effects', 'Pattern': r'effects are disabled', 'Score': 4},
         {'Effect': 'reveal_effects', 'Pattern': r'On Reveal effects', 'Score': 4},
         {'Effect': 'return_to_hand', 'Pattern': r'return it to your hand', 'Score': 3},
+        {'Effect': 'doubled', 'Pattern': r'doubled', 'Score': 3},
         {'Effect': 'no_ability', 'Pattern': r'No ability', 'Score': 0},
     ]
 

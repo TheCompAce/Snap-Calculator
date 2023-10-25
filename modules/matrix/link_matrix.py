@@ -21,6 +21,7 @@ def get_link_matrix():
         {'LocationContextID': 'draw_card', 'CardContextID': 'draw', 'Score': 50},
         {'LocationContextID': 'moves', 'CardContextID': 'moves', 'Score': 50},
         {'LocationContextID': 'destroy_it', 'CardContextID': 'destroyed_create', 'Score': 80},
+        {'LocationContextID': 'doubled', 'CardContextID': 'power', 'Score': 60},
     ]
 
     return link_matrix
