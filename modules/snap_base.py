@@ -7,7 +7,7 @@ from modules.matrix.location_matrix import get_location_matrix
 from modules.matrix.card_matrix import get_card_matrix
 from modules.matrix.link_matrix import get_link_matrix
 from modules.matrix.link_card_matrix import get_link_card_matrix
-from modules.utils import read_json
+from modules.utils import read_json, get_cards_from_base
 
 ERR_NO_LOCATION = -10000
 ERR_NO_CARD = -20000
@@ -81,6 +81,56 @@ def calculate_link_score(location_name, card_name):
 
     return link_score
 
+def calculate_cards_compatibility_score(base_name, check_name):
+    base_data = read_json(base_file)
+    card_matrix = get_card_matrix()
+    link_card_matrix = get_link_card_matrix()
+
+    # Find matching cards
+    base_match = None
+    for series in base_data.get('Cards', []):
+        for series_name, cards in series.items():
+            base_match = next((item for item in cards if item['Card'] == base_name), None)
+            if base_match:
+                break
+        if base_match:
+            break
+
+    check_match = None
+    for series in base_data.get('Cards', []):
+        for series_name, cards in series.items():
+            check_match = next((item for item in cards if item['Card'] == check_name), None)
+            if check_match:
+                break
+        if check_match:
+            break
+
+    # If either of the cards is not found, return an error code    
+    if not base_match or not check_match:
+        return ERR_NO_CARD
+
+    # Initialize compatibility score
+    compatibility_score = 0
+
+    # Get the effect texts
+    base_effect_text = base_match.get('Card Ability', '').lower()
+    check_effect_text = check_match.get('Card Ability', '').lower()
+
+    # Identify effects and their scores for base_name and check_name
+    base_effects_with_scores = [(item['Effect'], item['Score']) for item in card_matrix if re.search(item['Pattern'], base_effect_text, re.IGNORECASE)]
+    check_effects_with_scores = [(item['Effect'], item['Score']) for item in card_matrix if re.search(item['Pattern'], check_effect_text, re.IGNORECASE)]
+
+    # Calculate compatibility score
+    for base_effect, base_score in base_effects_with_scores:
+        for check_effect, check_score in check_effects_with_scores:
+            for link in link_card_matrix:
+                
+                if link['BaseContextID'] == base_effect and link['CheckContextID'] == check_effect:
+                    compatibility_score += (link['Score']) # * base_score * check_score)
+
+    return compatibility_score
+
+
 def calculate_compatibility_score(location_name, card_name):
     """
     Calculate a compatibility score between a given Location and Card, taking into account term matrices,
@@ -148,13 +198,51 @@ def calculate_compatibility_score(location_name, card_name):
     else:
         return ERR_NO_LOCATION
 
-def get_top_cards_for_location(location_name, cards = [], count=5, energy_level=6):
+def get_top_cards_for_card(base_card, cards = [], count=12, energy_level=10):
+    """
+    Get the top 'count' cards for a given location based on compatibility scores.
+    
+    Parameters:
+    base_card (str): The base card to check
+    count (int): The number of top cards to return
+    energy_level (int): Energy Level to use to check
+    
+    Returns:
+    list or str: List of top 'count' card names for the given location or error message
+    """
+
+    filtered_cards = [card for card in cards if card["Cost"] <= energy_level]
+
+    all_cards = get_cards_from_base(base_file)
+
+    count = int(count)
+    scores = {}
+    for card in all_cards:
+        if (base_card == card):
+            for check_card in filtered_cards:
+                if (base_card != check_card["Card"]):
+                    score = calculate_cards_compatibility_score(base_card, check_card["Card"])
+
+                    if score == ERR_NO_CARD:
+                        return f"Error checking '{base_card}' not found."
+                    
+                    scores[check_card["Card"]] = score
+            break
+
+    # Get the top 'count' cards
+    top_cards = nlargest(count, scores, key=scores.get)
+    
+    return top_cards
+
+def get_top_cards_for_location(location_name, cards = [], count=12, energy_level=6):
     """
     Get the top 'count' cards for a given location based on compatibility scores.
     
     Parameters:
     location_name (str): The name of the location
+    cards (array): list of cards
     count (int): The number of top cards to return
+    energy_level (int): Energy Level to use to check
     
     Returns:
     list or str: List of top 'count' card names for the given location or error message

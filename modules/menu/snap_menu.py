@@ -16,7 +16,7 @@ def main_menu():
     while True:
         print("----- Snap Calculator Menu -----")
         print("1. Get Scoring Values")
-        print("2. Get Top Cards for Location")
+        print("2. Get Top Cards")
         print("3. Create Data Graphs")
         print("4. Create Analysis Files Menu") 
         print("5. Player Detials Setup")

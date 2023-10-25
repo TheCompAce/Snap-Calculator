@@ -94,9 +94,10 @@ def autocomplete_generic(list_data, partial_name, no_check=False):
             print('Multiple matches found. Please select one:')
             for i, loc in enumerate(list_data):
                 print(f'{i + 1}. {loc}')
-            selection = int(input('Enter your choice: ')) - 1
+            selection = input('Enter your choice: ')
 
             if selection.isdigit():
+                selection = int(selection) - 1
                 return list_data[selection]
             else:
                 if selection == "":

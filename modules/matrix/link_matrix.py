@@ -19,7 +19,8 @@ def get_link_matrix():
         {'LocationContextID': 'shuffle_into_deck', 'CardContextID': 'shuffle', 'Score': 40},
         {'LocationContextID': 'power_increase', 'CardContextID': 'ongoing', 'Score': 60},
         {'LocationContextID': 'draw_card', 'CardContextID': 'draw', 'Score': 50},
-        {'LocationContextID': 'moves', 'CardContextID': 'moves', 'Score': 50}
+        {'LocationContextID': 'moves', 'CardContextID': 'moves', 'Score': 50},
+        {'LocationContextID': 'destroy_it', 'CardContextID': 'destroyed_create', 'Score': 80},
     ]
 
     return link_matrix

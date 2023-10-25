@@ -6,20 +6,48 @@ def get_link_card_matrix():
     list: The refined link matrix
     """
     link_card_matrix = [
-        {'LocationContextID': 'destroy', 'CardContextID': 'destroyed', 'Score': 80},
-        {'LocationContextID': 'energy_next_turn', 'CardContextID': 'ongoing', 'Score': 60},
-        {'LocationContextID': 'power_increase', 'CardContextID': 'power_increase', 'Score': 70},
-        {'LocationContextID': 'destroy_it', 'CardContextID': 'is_destroyed', 'Score': 50},
-        {'LocationContextID': 'on_turn', 'CardContextID': 'turn', 'Score': 40},
-        {'LocationContextID': 'end_the_game', 'CardContextID': 'power_increase', 'Score': 30},
-        {'LocationContextID': 'cards_must_be_played', 'CardContextID': 'energy', 'Score': 50},
-        {'LocationContextID': 'set_power', 'CardContextID': 'power_decrease', 'Score': 50},
-        {'LocationContextID': 'add_random_card', 'CardContextID': 'random_card', 'Score': 40},
-        {'LocationContextID': 'disable_effects', 'CardContextID': 'no_ability', 'Score': 50},
-        {'LocationContextID': 'shuffle_into_deck', 'CardContextID': 'shuffle', 'Score': 40},
-        {'LocationContextID': 'power_increase', 'CardContextID': 'ongoing', 'Score': 60},
-        {'LocationContextID': 'draw_card', 'CardContextID': 'draw', 'Score': 50},
-        {'LocationContextID': 'moves', 'CardContextID': 'moves', 'Score': 50}
+        # High importance due to Victory Condition
+        {'BaseContextID': 'power_increase', 'CheckContextID': 'p_power', 'Score': 90},
+        {'BaseContextID': 'p_power', 'CheckContextID': 'power_increase', 'Score': 90},
+
+        # Destruction related
+        {'BaseContextID': 'destroy', 'CheckContextID': 'destroyed', 'Score': 80},
+        {'BaseContextID': 'destroyed', 'CheckContextID': 'destroy', 'Score': 80},
+        {'BaseContextID': 'destroy', 'CheckContextID': 'destroyed_create', 'Score': 80},
+        {'BaseContextID': 'destroyed_create', 'CheckContextID': 'destroy', 'Score': 80},
+
+        # Draw mechanics
+        {'BaseContextID': 'draw', 'CheckContextID': 'draws', 'Score': 75},
+        {'BaseContextID': 'draws', 'CheckContextID': 'draw', 'Score': 75},
+
+        # Energy mechanics
+        {'BaseContextID': 'energy', 'CheckContextID': 'energy_value', 'Score': 70},
+        {'BaseContextID': 'energy_value', 'CheckContextID': 'energy', 'Score': 70},
+
+        # Gaining something
+        {'BaseContextID': 'gain', 'CheckContextID': 'gains', 'Score': 65},
+        {'BaseContextID': 'gains', 'CheckContextID': 'gain', 'Score': 65},
+
+        # Cost related
+        {'BaseContextID': 'cost_less', 'CheckContextID': 'cost_more', 'Score': -50},
+        {'BaseContextID': 'cost_more', 'CheckContextID': 'cost_less', 'Score': -50},
+
+        # Opponent interactions
+        {'BaseContextID': 'opponent', 'CheckContextID': 'draw', 'Score': 55},
+        {'BaseContextID': 'draw', 'CheckContextID': 'opponent', 'Score': 55},
+
+        # Discarding
+        {'BaseContextID': 'discard', 'CheckContextID': 'you_discarded', 'Score': 45},
+        {'BaseContextID': 'you_discarded', 'CheckContextID': 'discard', 'Score': 45},
+
+        # Yours and Opponent context
+        {'BaseContextID': 'yours', 'CheckContextID': 'opponent', 'Score': -35},
+        {'BaseContextID': 'opponent', 'CheckContextID': 'yours', 'Score': -35},
+        
+        # No ability
+        {'BaseContextID': 'no_ability', 'CheckContextID': 'no_ability', 'Score': 0}
     ]
+
+
 
     return link_card_matrix

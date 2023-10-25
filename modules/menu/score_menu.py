@@ -9,7 +9,8 @@ def score_menu():
         print("----- Scoring Values Menu -----")
         print("1. Get Location-Card Overall Score")
         print("2. Get Location-Card Linking Score")
-        print("3. Back")
+        print("3. Get Card-Card Linking Score")
+        print("4. Back")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -30,6 +31,14 @@ def score_menu():
             else:
                 print("An error occurred while calculating the score.")
         elif choice == '3':
+            base_card = autocomplete_card_name(snap_base.base_file, input("Enter a card name: "))
+            check_card = autocomplete_card_name(snap_base.base_file, input("Enter another card name: "))
+            score = snap_base.calculate_cards_compatibility_score(base_card, check_card)
+            if score != snap_base.ERR_NO_CARD:
+                 print(f"The linking score between the card {base_card} and card {check_card} is {score}.")
+            else:
+                print(f"An error occurred while calculating the score for {base_card} and {check_card}.")
+        elif choice == '4':
             return
         else:
             print("Invallid Choice.")

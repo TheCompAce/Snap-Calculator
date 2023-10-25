@@ -29,6 +29,7 @@ def get_card_matrix():
         {'Effect': 'turn_value', 'Pattern': r'turn (\d+)', 'Score': 1},
         {'Effect': 'destroy', 'Pattern': r'destroy', 'Score': 1},
         {'Effect': 'destroyed', 'Pattern': r'destroyed', 'Score': 2},
+        {'Effect': 'destroyed_create', 'Pattern': r'destroyed, create', 'Score': 1},
         {'Effect': 'create', 'Pattern': r'create', 'Score': 1},
         {'Effect': 'hand', 'Pattern': r'hand', 'Score': 1},
         {'Effect': 'deck', 'Pattern': r'deck', 'Score': 1},
@@ -42,6 +43,8 @@ def get_card_matrix():
         {'Effect': 'p_power', 'Pattern': r'Power', 'Score': 1},
         {'Effect': 'no_ability', 'Pattern': 'No ability', 'Score': 0},
         {'Effect': 'moves', 'Pattern': r'moves', 'Score': 1},
+        {'Effect': 'yours', 'Pattern': r'yours', 'Score': 1},
+        {'Effect': 'opponent', 'Pattern': r'opponent', 'Score': 1}
     ]
 
     return effects_and_patterns

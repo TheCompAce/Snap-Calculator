@@ -1,5 +1,5 @@
 from modules.menu.player_menu import player_file
-from modules.utils import autocomplete_deck_name, autocomplete_location_name, get_cards_from_names, read_json, read_player_json
+from modules.utils import autocomplete_card_name, autocomplete_deck_name, autocomplete_location_name, get_cards_from_names, read_json, read_player_json
 from modules import snap_base
 
 base_data = read_json(snap_base.base_file)
@@ -12,9 +12,10 @@ for series in base_data.get('Cards', []):
 def top_cards_menu():
     while True:
         print("----- Top Cards for Location Menu -----")
-        print("1. All Cards")
-        print("2. Player Cards ...")
-        print("3. Back")
+        print("1. Top Cards (All) for Location")
+        print("2. Top Cards (Player) for Location ..")
+        print("3. Top Cards (All) for Card")
+        print("4. Back")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -28,11 +29,25 @@ def top_cards_menu():
                 print(top_cards)
             else:
                 print(f"The top {count} cards for location {location_name} are: {', '.join(top_cards)}")
-        if choice == '2':
+        elif choice == '2':
             top_cards_player_menu()
         elif choice == '3':
+            base_card = autocomplete_card_name(snap_base.base_file, input("Enter a card name: "))
+            count = input("Enter the number of top cards you want: ")
+            if count.isdigit():
+                energy_level = int(input("Enter the energy level to filter by: "))
+                top_cards = snap_base.get_top_cards_for_card(base_card, all_cards, count, energy_level)
+
+                if isinstance(top_cards, str):
+                    print(top_cards)
+                else:
+                    print(f"The top {count} cards for card {base_card} are: {', '.join(top_cards)}")
+            else:
+                print("Invalid Options.")
+        elif choice == '4':
             print("Exiting the program.")
             break
+
 
 def top_cards_player_menu():
     
