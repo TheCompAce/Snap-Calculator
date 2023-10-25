@@ -84,8 +84,8 @@ def create_card_location_wave_map(player_data, location_name, card_names, allow_
     for card in cards_data:
         score = snap_base.calculate_compatibility_score(location_name, card["Card"])
         scores.append(score)
-        energy.append(card['Cost'] + random.uniform(-0.6, 0.0))
-        power.append(card['Power'] + random.uniform(-0.6, 0.0))
+        energy.append(card['Cost'] + random.uniform(-0.3, 0.3))
+        power.append(card['Power'] + random.uniform(-0.3, 0.3))
         labels.append(card['Card'])  # Assuming the name of the card is stored in 'Card'
 
     # Create the figure with an empty graph background
@@ -100,7 +100,7 @@ def create_card_location_wave_map(player_data, location_name, card_names, allow_
     ax = fig.add_axes([0.05, 0.05, 0.9, 0.9], projection='3d', frame_on=False)  # [left, bottom, width, height]
 
     # Plot the wave map with blue to light blue colors based on scores
-    sc = ax.scatter(energy, scores, power, c=power, cmap='Blues', marker='*', s=50)  # Set s=50 for larger points
+    sc = ax.scatter(energy, power, scores, c=scores, cmap='Blues', marker='*', s=50)  # Set s=50 for larger points
 
     # Add titles and labels with path effects and white transparent color
     title = ax.set_title(f"{player_data['Name']} Card Map at {location_name}")
@@ -108,26 +108,26 @@ def create_card_location_wave_map(player_data, location_name, card_names, allow_
 
 
     ax.set_xlabel('Energy', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
-    ax.set_zlabel('Power', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
-    ax.set_ylabel('Score', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
+    ax.set_zlabel('Score', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
+    ax.set_ylabel('Power', fontsize=12).set_path_effects(path_effects_shadow(3, 1, 'white'))
 
     # Increase tick label size for better visibility
     ax.tick_params(axis='both', which='major', labelsize=10)
 
     # Draw lines from points to base and back of the graph
     for e, p, s in zip(energy, scores, power):
-        ax.plot([e, e], [p, p], [min(power), s], c='gray', linestyle='--', linewidth=0.8)
-        ax.plot([e, e], [p, max(scores)], [s, s], c='gray', linestyle='--', linewidth=0.8)
+        ax.plot([e, e], [s, s], [min(scores), p], c='gray', linestyle='--', linewidth=0.8)
+        ax.plot([e, e], [s, max(power)], [p, p], c='gray', linestyle='--', linewidth=0.8)
 
     # Add labels for the points if less than 13 items
     if len(labels) < 1300:
-        for e, p, s, label in zip(energy, scores, power, labels):
+        for e, p, s, label in zip(energy, power, scores, labels):
             ax.text(e, p, s, label)
 
     # Set z-axis limits to min and max scores
     ax.set_xlim(min(energy), max(energy))
-    ax.set_ylim(min(scores), max(scores))
-    ax.set_zlim(min(power), max(power))
+    ax.set_ylim(min(power), max(power))
+    ax.set_zlim(min(scores), max(scores))
 
     # Save the wave map with a timestamp
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
