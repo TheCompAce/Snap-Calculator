@@ -70,10 +70,10 @@ def calculate_link_score(location_name, card_name):
     card_effect_text = card_match.get('Card Ability', '').lower()
 
     # Identify effects present in this location
-    location_effects = [item['Effect'] for item in location_matrix if re.search(item['Pattern'], location_effect_text, re.IGNORECASE)]
+    location_effects = [item['Effect'] for item in location_matrix if re.search(item['Pattern'], location_effect_text)]
 
     # Identify effects present in this card
-    card_effects = [item['Effect'] for item in card_matrix if re.search(item['Pattern'], card_effect_text, re.IGNORECASE)]
+    card_effects = [item['Effect'] for item in card_matrix if re.search(item['Pattern'], card_effect_text)]
 
     # Calculate link score using the identified effects
     link_score = find_link_score(location_effects, card_effects, link_matrix)
@@ -118,8 +118,8 @@ def calculate_cards_compatibility_score(base_name, check_name):
     check_effect_text = check_match.get('Card Ability', '').lower()
 
     # Identify effects and their scores for base_name and check_name
-    base_effects_with_scores = [(item['Effect'], item['Pattern'], item['Score']) for item in card_matrix if re.search(item['Pattern'], base_effect_text, re.IGNORECASE)]
-    check_effects_with_scores = [(item['Effect'], item['Pattern'], item['Score']) for item in card_matrix if re.search(item['Pattern'], check_effect_text, re.IGNORECASE)]
+    base_effects_with_scores = [(item['Effect'], item['Pattern'], item['Score']) for item in card_matrix if re.search(item['Pattern'], base_effect_text)]
+    check_effects_with_scores = [(item['Effect'], item['Pattern'], item['Score']) for item in card_matrix if re.search(item['Pattern'], check_effect_text)]
 
     # Calculate compatibility score
     for base_effect, base_pattern, base_score in base_effects_with_scores:
@@ -131,11 +131,11 @@ def calculate_cards_compatibility_score(base_name, check_name):
                     check_card = get_cards_from_names([check_name], base_file)[0]
                     base_pattren_score = 0
                     check_pattren_score = 0
-                    match = re.search(base_pattern, base_card["Card Ability"], re.IGNORECASE)
+                    match = re.search(base_pattern, base_card["Card Ability"])
                     if match and match.groups():
                         base_pattren_score = (int(match.group(1)) / 100)
 
-                    match = re.search(check_pattern, check_card["Card Ability"], re.IGNORECASE)
+                    match = re.search(check_pattern, check_card["Card Ability"])
                     if match and match.groups():
                         check_pattren_score = (int(match.group(1)) / 100)
 
@@ -181,7 +181,7 @@ def calculate_compatibility_score(location_name, card_name):
             pattern = term_data['Pattern']
             score = term_data['Score']
             
-            match = re.search(pattern, location_effect, re.IGNORECASE)
+            match = re.search(pattern, location_effect)
             if match:
                 compatibility_score += score
                 if match and match.groups():
@@ -200,7 +200,7 @@ def calculate_compatibility_score(location_name, card_name):
                 for term_data in card_matrix:
                     pattern = term_data['Pattern']
                     score = term_data['Score']
-                    match = re.search(pattern, card_effect, re.IGNORECASE)
+                    match = re.search(pattern, card_effect)
                     compatibility_score += score
                     if match and match.groups():
                         compatibility_score += (int(match.group(1)) / 100)
@@ -293,7 +293,7 @@ def analyze_location_patterns():
     for effect in location_effects:
         for pattern_dict in location_matrix:
             pattern = pattern_dict['Pattern']
-            if re.search(pattern, effect, re.IGNORECASE):
+            if re.search(pattern, effect):
                 pattern_frequency[pattern] += 1
 
     # Sort the frequency dictionary by occurrences
@@ -321,7 +321,7 @@ def analyze_card_patterns():
             for effect in card_effects:
                 for pattern_dict in card_matrix:
                     pattern = pattern_dict['Pattern']
-                    if re.search(pattern, effect, re.IGNORECASE):
+                    if re.search(pattern, effect):
                         pattern_frequency[pattern] += 1
 
     # Sort the frequency dictionary by occurrences
