@@ -131,6 +131,123 @@
                     "Power": 6,
                     "Card Ability": "No ability",
                     "Id": 13
+                },
+                {
+                    "Card": "Scarlet Witch",
+                    "Cost": 2,
+                    "Power": 3,
+                    "Card Ability": "On Reveal: Replace this location with a random new one.",
+                    "Id": 250
+                },
+                {
+                    "Card": "Uatu the Watcher",
+                    "Cost": 1,
+                    "Power": 2,
+                    "Card Ability": "At the start of the game, shows the right location to you.",
+                    "Id": 251
+                }
+            ]
+        },
+        {
+            "Marvel Snap Recruit Season": [
+                {
+                    "Card": "Blue Marvel",
+                    "Cost": 5,
+                    "Power": 3,
+                    "Card Ability": "Ongoing: Your other cards have +1 Power.",
+                    "Id": 237
+                },
+                {
+                    "Card": "Colossus",
+                    "Cost": 2,
+                    "Power": 3,
+                    "Card Ability": "Ongoing: Can't be destroyed, moved, or have its Power reduced.",
+                    "Id": 238
+                },
+                {
+                    "Card": "Ant-Man",
+                    "Cost": 1,
+                    "Power": 1,
+                    "Card Ability": "Ongoing: If you have 3 other cards here, +3 Power.",
+                    "Id": 239
+                },
+                {
+                    "Card": "Gamora",
+                    "Cost": 5,
+                    "Power": 7,
+                    "Card Ability": "On Reveal: If your opponent played a card here this turn, +5 Power.",
+                    "Id": 240
+                },
+                {
+                    "Card": "Ironheart",
+                    "Cost": 3,
+                    "Power": 0,
+                    "Card Ability": "On Reveal: Give 3 other friendly cards +2 Power.",
+                    "Id": 241
+                }
+            ]
+        },
+        {
+            "Nexus Event​ Cards" : [
+                {
+                    "Card": "Jane Foster as Thor",
+                    "Cost": 5,
+                    "Power": 8,
+                    "Card Ability": "On Reveal: Draw all cards that Cost 0 from your deck",
+                    "Id": 242
+                }
+            ]
+        },
+        {
+            "Marvel Snap Series 0 Cards": [
+                {
+                    "Card": "Jessica Jones",
+                    "Cost": 4,
+                    "Power": 4,
+                    "Card Ability": "On Reveal: If you don't play a card at this location next turn, +4 Power.",
+                    "Id": 243
+                },
+                {
+                    "Card": "Ka-Zar",
+                    "Cost": 4,
+                    "Power": 4,
+                    "Card Ability": "Ongoing: Your 1-Cost cards have +1 Power.",
+                    "Id": 244
+                },
+                {
+                    "Card": "Mister Fantastic",
+                    "Cost": 3,
+                    "Power": 2,
+                    "Card Ability": "Ongoing: Adjacent locations have +2 Power.",
+                    "Id": 245
+                },
+                {
+                    "Card": "Nightcrawler",
+                    "Cost": 1,
+                    "Power": 2,
+                    "Card Ability": "You can move this once.",
+                    "Id": 246
+                },
+                {
+                    "Card": "Odin",
+                    "Cost": 6,
+                    "Power": 8,
+                    "Card Ability": "On Reveal: Activate the On Reveal abilities of your other cards at this location.",
+                    "Id": 247
+                },
+                {
+                    "Card": "Spectrum",
+                    "Cost": 6,
+                    "Power": 7,
+                    "Card Ability": "On Reveal: Give your Ongoing cards +2 Power.",
+                    "Id": 248
+                },
+                {
+                    "Card": "Wolfsbane",
+                    "Cost": 3,
+                    "Power": 1,
+                    "Card Ability": "On Reveal: +2 Power for each other card you have here.",
+                    "Id": 249
                 }
             ]
         },

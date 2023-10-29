@@ -1,17 +1,6 @@
 Cards:
 ==================
-Blue Marvel
-Colossus
-Gamora
-Ironheart
-Jane Foster as Thos
-Jessica
-Kazar
-Mister Fantastic
-Nightcrawler
-Odin
+
 Scarlet Witch
-Specyrum
 Thing
 Uatu
-Wolfsbane
