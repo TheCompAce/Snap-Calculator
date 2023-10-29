@@ -7,5 +7,4 @@ def get_location_matrix():
     Returns:
     list: The refined location_matrix
     """
-    print("OK3")
     return get_matrix('system/matrix/location_matrix.json')

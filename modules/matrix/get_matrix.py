@@ -8,7 +8,6 @@ def get_matrix(matrix_file):
     Returns:
     list: The refined location_matrix
     """
-    print("OK X")
     # Read the effects and patterns for gameplay mechanics from JSON file
     json_file_path = matrix_file
     with open(json_file_path, 'r') as json_file:

@@ -91,10 +91,12 @@ def build_deck_based_on_locations(location_list = None):
             location_pass = True
             location_list = location_list.split(',')
 
+        
         locations_bad = False
         bad_locations = []
         for i, location in enumerate(location_list):
-            location_list[i] = autocomplete_location_name(snap_base.base_file, location, no_check=location_pass)
+            print(f"location_pass = {location_pass}")
+            location_list[i] = autocomplete_location_name(snap_base.base_file, location.strip(), no_check=location_pass)
             if not check_if_valid_location(snap_base.base_file, location_list[i]):
                 locations_bad = True
                 bad_locations.append(location)

@@ -9,5 +9,4 @@ def get_card_matrix():
     Returns:
     list: The refined location_matrix
     """
-    print("OK1")
     return get_matrix('system/matrix/card_matrix.json')
