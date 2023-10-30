@@ -20,8 +20,9 @@ def main_menu():
         print("3. Create Data Graphs")
         print("4. Create Analysis Files Menu") 
         print("5. Player Detials Setup")
-        print("6. Build Decks")
-        print("7. Exit")
+        print("6. Edit Matrix")
+        print("7. Build Decks")        
+        print("8. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -35,8 +36,10 @@ def main_menu():
         elif choice == '5':
             player_menu.player_setup_menu()
         elif choice == '6':
-            deck_menu()
+            pass
         elif choice == '7':
+            deck_menu()
+        elif choice == '8':
             print("Exiting the program.")
             break
 

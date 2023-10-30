@@ -57,7 +57,6 @@ def build_deck_based_on_overall_cards():
                             card_check_data.append(add_card)
                 base_scores = {}
                 for card in card_check_data:
-                    print(card["Score"])
                     base_scores[card["Name"]] = card["Score"]
                     
                 deck_cards = nlargest(12, base_scores, key=base_scores.get)

@@ -1,8 +1,9 @@
 [
-    {"LocationContextID": "destroy", "CardContextID": "destroyed", "Score": 80},
-    {"LocationContextID": "energy_next_turn", "CardContextID": "ongoing", "Score": 60},
+    {"LocationContextID": "destroy", "CardContextID": "destroyed", "Score": 90},
+    {"LocationContextID": "energy", "CardContextID": "ongoing", "Score": 60},
+    {"LocationContextID": "next_turn", "CardContextID": "play_next_turn", "Score": 60},
     {"LocationContextID": "power_increase", "CardContextID": "power_increase", "Score": 70},
-    {"LocationContextID": "destroy_it", "CardContextID": "is_destroyed", "Score": 50},
+    {"LocationContextID": "destroy_it", "CardContextID": "is_destroyed", "Score": 90},
     {"LocationContextID": "on_turn", "CardContextID": "turn", "Score": 40},
     {"LocationContextID": "end_the_game", "CardContextID": "power_increase", "Score": 30},
     {"LocationContextID": "cards_must_be_played", "CardContextID": "energy", "Score": 50},
@@ -13,6 +14,13 @@
     {"LocationContextID": "power_increase", "CardContextID": "ongoing", "Score": 60},
     {"LocationContextID": "draw_card", "CardContextID": "draw", "Score": 50},
     {"LocationContextID": "moves", "CardContextID": "moves", "Score": 50},
-    {"LocationContextID": "destroy_it", "CardContextID": "destroyed_create", "Score": 80},
-    {"LocationContextID": "doubled", "CardContextID": "power", "Score": 60}
+    {"LocationContextID": "destroy_it", "CardContextID": "destroyed_create", "Score": 90},
+    {"LocationContextID": "doubled", "CardContextID": "power", "Score": 60},
+    {"LocationContextID": "when_you_here", "CardContextID": "you_discarded", "Score": 50},
+    {"LocationContextID": "draw_cards", "CardContextID": "draw", "Score": 50},
+    {"LocationContextID": "play_card", "CardContextID": "play_next_turn", "Score": 50},
+    {"LocationContextID": "end_of_turn", "CardContextID": "play_next_turn", "Score": 50},
+    {"LocationContextID": "on_your_turn", "CardContextID": "on_reveal", "Score": 50},
+    {"LocationContextID": "get_power", "CardContextID": "power_increase", "Score": 50},
+    {"LocationContextID": "you_effect", "CardContextID": "you_discarded", "Score": 50}
 ]
