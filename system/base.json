@@ -131,20 +131,6 @@
                     "Power": 6,
                     "Card Ability": "No ability",
                     "Id": 13
-                },
-                {
-                    "Card": "Scarlet Witch",
-                    "Cost": 2,
-                    "Power": 3,
-                    "Card Ability": "On Reveal: Replace this location with a random new one.",
-                    "Id": 250
-                },
-                {
-                    "Card": "Uatu the Watcher",
-                    "Cost": 1,
-                    "Power": 2,
-                    "Card Ability": "At the start of the game, shows the right location to you.",
-                    "Id": 251
                 }
             ]
         },
@@ -188,7 +174,7 @@
             ]
         },
         {
-            "Nexus Event​ Cards" : [
+            "Nexus Event Cards" : [
                 {
                     "Card": "Jane Foster as Thor",
                     "Cost": 5,
@@ -390,15 +376,8 @@
                     "Card": "Heimdall",
                     "Cost": 6,
                     "Power": 8,
-                    "Card Ability": "",
-                    "Id": 33
-                },
-                {
-                    "Card": "Heimdall",
-                    "Cost": 6,
-                    "Power": 8,
                     "Card Ability": "On Reveal: Move your other cards one location to the left.",
-                    "Id": 34
+                    "Id": 33
                 },
                 {
                     "Card": "Hulkbuster",
@@ -516,7 +495,7 @@
                     "Card": "Rocket Raccoon",
                     "Cost": 1,
                     "Power": 2,
-                    "Card Ability": "",
+                    "Card Ability": "On Reveal: If your opponent played a card here this turn, +2 Power.",
                     "Id": 51
                 },
                 {
@@ -772,7 +751,7 @@
                     "Card": "Winter Soldier",
                     "Cost": 2,
                     "Power": 6,
-                    "Card Ability": "It's time for me to face the past.",
+                    "Card Ability": "No ability",
                     "Id": 86
                 }
             ]
@@ -1413,7 +1392,7 @@
                     "Card": "Valkyrie",
                     "Cost": 5,
                     "Power": 3,
-                    "Card Ability": "",
+                    "Card Ability": "On Reveal: Set ALL cards at this location to 3 Power.",
                     "Id": 177
                 },
                 {

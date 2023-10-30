@@ -1,212 +1,45 @@
 [
-    {
-        "Effect": "destroy",
-        "Pattern": "destroy",
-        "Score": 6
-    },
-    {
-        "Effect": "energy",
-        "Pattern": "\\+?(\\d+) Energy",
-        "Score": 8
-    },
-    {
-        "Effect": "next_turn",
-        "Pattern": "next turn",
-        "Score": 8
-    },
-    {
-        "Effect": "power_increase",
-        "Pattern": "\\+?(\\d+) Power",
-        "Score": 11
-    },
-    {
-        "Effect": "cost_card",
-        "Pattern": "(\\d+)-Cost card",
-        "Score": 7
-    },
-    {
-        "Effect": "on_turn",
-        "Pattern": "On turn (\\d+)",
-        "Score": 6
-    },
-    {
-        "Effect": "after_turn",
-        "Pattern": "After turn (\\d+)",
-        "Score": 5
-    },
-    {
-        "Effect": "card_cost",
-        "Pattern": "cost (\\d+)",
-        "Score": 5
-    },
-    {
-        "Effect": "destroy_it",
-        "Pattern": "destroy it",
-        "Score": 3
-    },
-    {
-        "Effect": "add_copy",
-        "Pattern": "add a copy",
-        "Score": 4
-    },
-    {
-        "Effect": "add_to_hand",
-        "Pattern": "add a .* to your hand",
-        "Score": 4
-    },
-    {
-        "Effect": "draw_card",
-        "Pattern": "draws? (\\d+) card",
-        "Score": 6
-    },
-    {
-        "Effect": "move_it",
-        "Pattern": "move it",
-        "Score": 2
-    },
-    {
-        "Effect": "moves",
-        "Pattern": "moves",
-        "Score": 2
-    },
-    {
-        "Effect": "fill_location",
-        "Pattern": "fill this Location",
-        "Score": 8
-    },
-    {
-        "Effect": "you_effect",
-        "Pattern": "you",
-        "Score": 1
-    },
-    {
-        "Effect": "no_effect",
-        "Pattern": "[no effect]",
-        "Score": 1
-    },
-    {
-        "Effect": "destroy_location",
-        "Pattern": "Destroy the other locations",
-        "Score": 9
-    },
-    {
-        "Effect": "fight_destroy",
-        "Pattern": "FIGHT! Destroy the weakest",
-        "Score": 6
-    },
-    {
-        "Effect": "swap_hands",
-        "Pattern": "swap hands",
-        "Score": 5
-    },
-    {
-        "Effect": "costs_less",
-        "Pattern": "cost (\\d+) less",
-        "Score": 4
-    },
-    {
-        "Effect": "costs_more",
-        "Pattern": "cost (\\d+) more",
-        "Score": 6
-    },
-    {
-        "Effect": "power_decrease",
-        "Pattern": "have -(\\d+) Power",
-        "Score": 8
-    },
-    {
-        "Effect": "set_power",
-        "Pattern": "set its base Power to (\\d+)",
-        "Score": 9
-    },
-    {
-        "Effect": "cards_must_be_played",
-        "Pattern": "all cards must be played here",
-        "Score": 7
-    },
-    {
-        "Effect": "add_random_card",
-        "Pattern": "Add a random (\\d+)-Cost card",
-        "Score": 6
-    },
-    {
-        "Effect": "shuffle_into_deck",
-        "Pattern": "shuffle .* into your deck",
-        "Score": 4
-    },
-    {
-        "Effect": "end_the_game",
-        "Pattern": "end the game",
-        "Score": 9
-    },
-    {
-        "Effect": "disable_effects",
-        "Pattern": "effects are disabled",
-        "Score": 6
-    },
-    {
-        "Effect": "reveal_effects",
-        "Pattern": "On Reveal effects",
-        "Score": 6
-    },
-    {
-        "Effect": "return_to_hand",
-        "Pattern": "return it to your hand",
-        "Score": 5
-    },
-    {
-        "Effect": "doubled",
-        "Pattern": "doubled",
-        "Score": 3
-    },
-    {
-        "Effect": "no_ability",
-        "Pattern": "No ability",
-        "Score": 2
-    },
-    {
-        "Effect": "when_you_here",
-        "Pattern": "When you .* here",
-        "Score": 2
-    },
-    {
-        "Effect": "whoever_here",
-        "Pattern": "Whoever .* here",
-        "Score": 2
-    },
-    {
-        "Effect": "draw_cards",
-        "Pattern": "draw \\d+ cards",
-        "Score": 3
-    },
-    {
-        "Effect": "play_card",
-        "Pattern": "play a .* card",
-        "Score": 3
-    },
-    {
-        "Effect": "end_of_turn",
-        "Pattern": "At the end of turn \\d+",
-        "Score": 4
-    },
-    {
-        "Effect": "on_your_turn",
-        "Pattern": "On your turn",
-        "Score": 2
-    },
-    {
-        "Effect": "get_power",
-        "Pattern": "get \\+?\\d+ Power",
-        "Score": 4
-    },
-    {
-        "Effect": "each_player",
-        "Pattern": "Each player .*",
-        "Score": 2
-    },
-    {
-        "Effect": "you_effect",
-        "Pattern": "You .*",
-        "Score": 1
-    }
-]
+    {"Effect": "destroy", "Pattern": "destroy", "Score": 11},
+    {"Effect": "energy", "Pattern": "\\+?(\\d+) Energy", "Score": 13},
+    {"Effect": "next_turn", "Pattern": "next turn", "Score": 13},
+    {"Effect": "power_increase", "Pattern": "\\+?(\\d+) Power", "Score": 16},
+    {"Effect": "cost_card", "Pattern": "(\\d+)-Cost card", "Score": 12},
+    {"Effect": "on_turn", "Pattern": "On turn (\\d+)", "Score": 11},
+    {"Effect": "after_turn", "Pattern": "After turn (\\d+)", "Score": 10},
+    {"Effect": "card_cost", "Pattern": "cost (\\d+)", "Score": 10},
+    {"Effect": "destroy_it", "Pattern": "destroy it", "Score": 8},
+    {"Effect": "add_copy", "Pattern": "add a copy", "Score": 9},
+    {"Effect": "add_to_hand", "Pattern": "add a .* to your hand", "Score": 9},
+    {"Effect": "draw_card", "Pattern": "draws? (\\d+) card", "Score": 11},
+    {"Effect": "move_it", "Pattern": "move it", "Score": 7},
+    {"Effect": "moves", "Pattern": "moves", "Score": 7},
+    {"Effect": "fill_location", "Pattern": "fill this Location", "Score": 13},
+    {"Effect": "you_effect", "Pattern": "you", "Score": 6},
+    {"Effect": "no_effect", "Pattern": "[no effect]", "Score": 6},
+    {"Effect": "destroy_location", "Pattern": "Destroy the other locations", "Score": 14},
+    {"Effect": "fight_destroy", "Pattern": "FIGHT! Destroy the weakest", "Score": 11},
+    {"Effect": "swap_hands", "Pattern": "swap hands", "Score": 10},
+    {"Effect": "costs_less", "Pattern": "cost (\\d+) less", "Score": 9},
+    {"Effect": "costs_more", "Pattern": "cost (\\d+) more", "Score": 11},
+    {"Effect": "power_decrease", "Pattern": "have -(\\d+) Power", "Score": 13},
+    {"Effect": "set_power", "Pattern": "set its base Power to (\\d+)", "Score": 14},
+    {"Effect": "cards_must_be_played", "Pattern": "all cards must be played here", "Score": 12},
+    {"Effect": "add_random_card", "Pattern": "Add a random (\\d+)-Cost card", "Score": 11},
+    {"Effect": "shuffle_into_deck", "Pattern": "shuffle .* into your deck", "Score": 9},
+    {"Effect": "end_the_game", "Pattern": "end the game", "Score": 14},
+    {"Effect": "disable_effects", "Pattern": "effects are disabled", "Score": 11},
+    {"Effect": "reveal_effects", "Pattern": "On Reveal effects", "Score": 11},
+    {"Effect": "return_to_hand", "Pattern": "return it to your hand", "Score": 10},
+    {"Effect": "doubled", "Pattern": "doubled", "Score": 8},
+    {"Effect": "no_ability", "Pattern": "No ability", "Score": 7},
+    {"Effect": "when_you_here", "Pattern": "When you .* here", "Score": 7},
+    {"Effect": "whoever_here", "Pattern": "Whoever .* here", "Score": 7},
+    {"Effect": "draw_cards", "Pattern": "draw \\d+ cards", "Score": 8},
+    {"Effect": "play_card", "Pattern": "play a .* card", "Score": 8},
+    {"Effect": "end_of_turn", "Pattern": "At the end of turn \\d+", "Score": 9},
+    {"Effect": "on_your_turn", "Pattern": "On your turn", "Score": 7},
+    {"Effect": "get_power", "Pattern": "get \\+?\\d+ Power", "Score": 9},
+    {"Effect": "each_player", "Pattern": "Each player .*", "Score": 7},
+    {"Effect": "you_effect", "Pattern": "You .*", "Score": 6}
+  ]
+  
