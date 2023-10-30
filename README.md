@@ -56,20 +56,41 @@ The scoring system in Snap Calculator relies on a series of matrices and computa
 
 ### How to Edit Matrix Files
 
-#### card_matrix.py
-- This file defines the effects and patterns for gameplay mechanics related to cards. 
-- To update or add a new rule, add a dictionary entry specifying the `Effect`, `Pattern`, and `Score`.
+#### Using the Edit Matrix Menu
 
-#### link_matrix.py
-- This file defines the linking rules between location and card contexts.
-- To modify the linking rules, update the dictionary entries for `LocationContextID` and `CardContextID`.
+1. **Main Edit Matrix Menu**: When you run the program, you'll encounter the main "Edit Matrix Menu." Here you can choose which matrix you'd like to edit.
+    - **Options**: 
+        - Edit Location Matrix
+        - Edit Card Matrix
+        - Edit Location To Card Matrix
+        - Edit Card To Card Link Matrix
+        - Back (to exit the menu)
 
-#### location_matrix.py
-- This file defines the effects and patterns for gameplay mechanics related to locations.
-- Similar to `card_matrix.py`, you can add or modify dictionary entries for `Effect`, `Pattern`, and `Score`.
+2. **Sub-Menus**: After selecting a matrix to edit, you'll enter a sub-menu specific to that matrix. Each sub-menu has similar options:
+    - **View Matrix**: Displays the current entries in the selected matrix.
+    - **Add Item**: Allows you to add a new entry to the matrix.
+    - **Edit Item**: Lets you edit an existing entry in the matrix.
+    - **Remove Item**: Allows you to remove an entry from the matrix.
+    - **Back**: Returns you to the main "Edit Matrix Menu."
 
+##### Location Matrix Sub-Menu
+- **Edit Location Matrix**: Once selected, you can view, add, edit, or remove entries related to gameplay effects and patterns at different locations.
 
+##### Card Matrix Sub-Menu
+- **Edit Card Matrix**: Here, you can manage entries related to card effects, patterns, and scores.
 
+##### Location To Card Matrix Sub-Menu
+- **Edit Location To Card Matrix**: This menu lets you manage how locations and cards are linked, with options to view, add, edit, or remove such links.
+
+##### Card To Card Link Matrix Sub-Menu
+- **Edit Card To Card Link Matrix**: This menu is for managing relationships between different card contexts. You can view, add, edit, or remove these relationships.
+
+#### Navigating the Menus
+- Follow the on-screen prompts to make your selection.
+- When adding or editing an item, you'll be asked to input or select various fields depending on the matrix. These could be IDs, patterns, or scores.
+- To exit any menu or sub-menu, select the "Back" option.
+
+This way, you can easily manage and modify different aspects of your game mechanics without directly altering the code.
 
 ## Installation
 - Install the dependencies by running `pip install -r requirements.txt`.

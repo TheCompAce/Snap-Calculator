@@ -4,6 +4,7 @@ from modules.menu.graphs_menu import graphs_menu
 from modules.menu.make_deck_menu import deck_menu
 from modules.menu.score_menu import score_menu
 from modules.menu.top_cards_menu import top_cards_menu
+from modules.menu.edit_matrix_menu import edit_matrix_menu
 from modules.utils import check_and_create_folder, autocomplete_location_name, autocomplete_card_name, read_json
 from modules.menu import player_menu
 from  modules.menu.analyze_menu import analyze_menu
@@ -36,7 +37,7 @@ def main_menu():
         elif choice == '5':
             player_menu.player_setup_menu()
         elif choice == '6':
-            pass
+            edit_matrix_menu()
         elif choice == '7':
             deck_menu()
         elif choice == '8':

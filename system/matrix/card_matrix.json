@@ -1,46 +1,222 @@
 [
-    {"Effect": "on_reveal", "Pattern": "On Reveal:", "Score": 9},
-    {"Effect": "ongoing", "Pattern": "Ongoing:", "Score": 8},
-    {"Effect": "power_increase", "Pattern": "\\+(\\d+) Power", "Score": 8},
-    {"Effect": "opponent", "Pattern": "opponent", "Score": 6},
-    {"Effect": "draws", "Pattern": "draws ", "Score": 5},
-    {"Effect": "draw", "Pattern": "draw ", "Score": 5},
-    {"Effect": "gains", "Pattern": "gains ", "Score": 4},
-    {"Effect": "gain", "Pattern": "gain ", "Score": 4},
-    {"Effect": "cost_less", "Pattern": "cost (\\d+) less", "Score": 2},
-    {"Effect": "cost_more", "Pattern": "cost (\\d+) more", "Score": 4},
-    {"Effect": "is_destroyed", "Pattern": "is destroyed", "Score": 1},
-    {"Effect": "this_is_destroyed", "Pattern": "this is destroyed", "Score": 1},
-    {"Effect": "play_next_turn", "Pattern": "play a card here next turn", "Score": 3},
-    {"Effect": "you_discarded", "Pattern": "you discard", "Score": 3},
-    {"Effect": "random_card", "Pattern": "(\\d+) random card", "Score": 3},
-    {"Effect": "random_cards", "Pattern": "(\\d+) random cards", "Score": 3},
-    {"Effect": "energy", "Pattern": "energy", "Score": 1},
-    {"Effect": "energy_value", "Pattern": "energy cost (\\d+)", "Score": 1},
-    {"Effect": "turn", "Pattern": "turn", "Score": 3},
-    {"Effect": "turn_value", "Pattern": "turn (\\d+)", "Score": 3},
-    {"Effect": "destroy", "Pattern": "destroy", "Score": 1},
-    {"Effect": "destroyed", "Pattern": "destroyed", "Score": 2},
-    {"Effect": "destroyed_create", "Pattern": "destroyed, create", "Score": 6},
-    {"Effect": "create", "Pattern": "create", "Score": 6},
-    {"Effect": "hand", "Pattern": "hand", "Score": 3},
-    {"Effect": "deck", "Pattern": "deck", "Score": 1},
-    {"Effect": "discard", "Pattern": "discard", "Score": 3},
-    {"Effect": "reveal", "Pattern": "reveal", "Score": 3},
-    {"Effect": "swap", "Pattern": "swap", "Score": 3},
-    {"Effect": "shuffle", "Pattern": "shuffle", "Score": 1},
-    {"Effect": "win", "Pattern": "win", "Score": 1},
-    {"Effect": "location", "Pattern": "location", "Score": 6},
-    {"Effect": "power", "Pattern": "power", "Score": 4},
-    {"Effect": "p_power", "Pattern": "Power", "Score": 4},
-    {"Effect": "no_ability", "Pattern": "No ability", "Score": 2},
-    {"Effect": "move", "Pattern": "move", "Score": 1},
-    {"Effect": "pull", "Pattern": "pull", "Score": 1},
-    {"Effect": "moves", "Pattern": "moves", "Score": 1},
-    {"Effect": "yours", "Pattern": "yours", "Score": 1},
-    {"Effect": "opponent", "Pattern": "opponent", "Score": 3},
-    {"Effect": "a_card_moves", "Pattern": "a card moves", "Score": 3},
-    {"Effect": "this_moves", "Pattern": "this moves", "Score": 1},
-    {"Effect": "this_card_moves", "Pattern": "this card moves", "Score": 3},
-    {"Effect": "add_a_copy", "Pattern": "add a copy", "Score": 3}
+    {
+        "Effect": "on_reveal",
+        "Pattern": "On Reveal:",
+        "Score": 9
+    },
+    {
+        "Effect": "ongoing",
+        "Pattern": "Ongoing:",
+        "Score": 8
+    },
+    {
+        "Effect": "power_increase",
+        "Pattern": "\\+(\\d+) Power",
+        "Score": 8
+    },
+    {
+        "Effect": "opponent",
+        "Pattern": "opponent",
+        "Score": 6
+    },
+    {
+        "Effect": "draws",
+        "Pattern": "draws ",
+        "Score": 5
+    },
+    {
+        "Effect": "draw",
+        "Pattern": "draw ",
+        "Score": 5
+    },
+    {
+        "Effect": "gains",
+        "Pattern": "gains ",
+        "Score": 4
+    },
+    {
+        "Effect": "gain",
+        "Pattern": "gain ",
+        "Score": 4
+    },
+    {
+        "Effect": "cost_less",
+        "Pattern": "cost (\\d+) less",
+        "Score": 2
+    },
+    {
+        "Effect": "cost_more",
+        "Pattern": "cost (\\d+) more",
+        "Score": 4
+    },
+    {
+        "Effect": "is_destroyed",
+        "Pattern": "is destroyed",
+        "Score": 1
+    },
+    {
+        "Effect": "this_is_destroyed",
+        "Pattern": "this is destroyed",
+        "Score": 1
+    },
+    {
+        "Effect": "play_next_turn",
+        "Pattern": "play a card here next turn",
+        "Score": 3
+    },
+    {
+        "Effect": "you_discarded",
+        "Pattern": "you discard",
+        "Score": 3
+    },
+    {
+        "Effect": "random_card",
+        "Pattern": "(\\d+) random card",
+        "Score": 3
+    },
+    {
+        "Effect": "random_cards",
+        "Pattern": "(\\d+) random cards",
+        "Score": 3
+    },
+    {
+        "Effect": "energy",
+        "Pattern": "energy",
+        "Score": 1
+    },
+    {
+        "Effect": "energy_value",
+        "Pattern": "energy cost (\\d+)",
+        "Score": 1
+    },
+    {
+        "Effect": "turn",
+        "Pattern": "turn",
+        "Score": 3
+    },
+    {
+        "Effect": "turn_value",
+        "Pattern": "turn (\\d+)",
+        "Score": 3
+    },
+    {
+        "Effect": "destroy",
+        "Pattern": "destroy",
+        "Score": 1
+    },
+    {
+        "Effect": "destroyed",
+        "Pattern": "destroyed",
+        "Score": 2
+    },
+    {
+        "Effect": "destroyed_create",
+        "Pattern": "destroyed, create",
+        "Score": 6
+    },
+    {
+        "Effect": "create",
+        "Pattern": "create",
+        "Score": 6
+    },
+    {
+        "Effect": "hand",
+        "Pattern": "hand",
+        "Score": 3
+    },
+    {
+        "Effect": "deck",
+        "Pattern": "deck",
+        "Score": 1
+    },
+    {
+        "Effect": "discard",
+        "Pattern": "discard",
+        "Score": 3
+    },
+    {
+        "Effect": "reveal",
+        "Pattern": "reveal",
+        "Score": 3
+    },
+    {
+        "Effect": "swap",
+        "Pattern": "swap",
+        "Score": 3
+    },
+    {
+        "Effect": "shuffle",
+        "Pattern": "shuffle",
+        "Score": 1
+    },
+    {
+        "Effect": "win",
+        "Pattern": "win",
+        "Score": 1
+    },
+    {
+        "Effect": "location",
+        "Pattern": "location",
+        "Score": 6
+    },
+    {
+        "Effect": "power",
+        "Pattern": "power",
+        "Score": 4
+    },
+    {
+        "Effect": "p_power",
+        "Pattern": "Power",
+        "Score": 4
+    },
+    {
+        "Effect": "no_ability",
+        "Pattern": "No ability",
+        "Score": 2
+    },
+    {
+        "Effect": "move",
+        "Pattern": "move",
+        "Score": 1
+    },
+    {
+        "Effect": "pull",
+        "Pattern": "pull",
+        "Score": 1
+    },
+    {
+        "Effect": "moves",
+        "Pattern": "moves",
+        "Score": 1
+    },
+    {
+        "Effect": "yours",
+        "Pattern": "yours",
+        "Score": 1
+    },
+    {
+        "Effect": "opponent",
+        "Pattern": "opponent",
+        "Score": 3
+    },
+    {
+        "Effect": "a_card_moves",
+        "Pattern": "a card moves",
+        "Score": 3
+    },
+    {
+        "Effect": "this_moves",
+        "Pattern": "this moves",
+        "Score": 1
+    },
+    {
+        "Effect": "this_card_moves",
+        "Pattern": "this card moves",
+        "Score": 3
+    },
+    {
+        "Effect": "add_a_copy",
+        "Pattern": "add a copy",
+        "Score": 3
+    }
 ]
