@@ -51,9 +51,6 @@ Snap Calculator offers a variety of features to manage and analyze your card col
 
 ## Matrix Setup
 
-### Overview
-The scoring system in Snap Calculator relies on a series of matrices and computation logic to evaluate the compatibility and effects between cards and locations. Each matrix file under `modules/matrix` contains predefined rules or score values for different gameplay mechanics. These matrices are then utilized in the `snap_base.py` file, where the actual computation takes place, to generate scores for different card and location combinations.
-
 ### How to Edit Matrix Files
 
 #### Using the Edit Matrix Menu
